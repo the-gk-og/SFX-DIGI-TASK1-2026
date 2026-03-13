@@ -1,2 +1,3 @@
 .env
 /App-Flask/.env
+/App-Flask/instance/blog.db
