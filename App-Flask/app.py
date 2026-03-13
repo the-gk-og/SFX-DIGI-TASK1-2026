@@ -3,6 +3,7 @@ import os
 from flask import Flask, render_template, request, redirect, url_for, flash, jsonify, session
 from flask_mail import Mail, Message
 from dotenv import load_dotenv
+from blog import blog, init_db
 
 load_dotenv()
 
@@ -28,6 +29,11 @@ mail = Mail(app)
 
 Emailtemplatesdir = os.path.join(os.path.dirname(__file__), 'email_templates')
 
+#blog
+app.register_blueprint(blog)
+
+with app.app_context():
+    init_db()
 
 #email helper functions 
 
@@ -101,7 +107,7 @@ def contact_submit():
         'message': message
     })
     send_html_email(
-        subject   = 'We got your message – ShowWise',
+        subject   = 'We got your message - ShowWise',
         recipient = email,
         html_body = confirm_html,
         text_body = f"Hi {fname or name},\n\nThanks for reaching out! We'll be in touch within one business day.\n\nShowWise Team"

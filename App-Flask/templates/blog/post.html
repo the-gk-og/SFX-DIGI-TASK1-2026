@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ post.title }} - ShowWise Blog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/blog.css">
+</head>
+<body>
+
+  <nav class="nav" id="navbar">
+    <div class="nav-inner">
+      <a href="/home" class="logo">Show<span>Wise</span></a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="/home">Home</a></li>
+        <li><a href="/learn-more">Learn More</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/blog" class="active">Blog</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/contact" class="nav-cta">Request Demo</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="blog-post-page">
+    <div class="container">
+      <a href="/blog" class="blog-back-link">← Back to Blog</a>
+      <div class="blog-post-date">{{ post.created }}</div>
+      <h1>{{ post.title }}</h1>
+      <div class="blog-post-body">{{ post.body }}</div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="/home" class="logo">Show<span>Wise</span></a>
+        <p>Professional production management for theatres, schools, studios, and event teams worldwide.</p>
+      </div>
+      <div class="footer-links">
+        <div>
+          <strong>Platform</strong>
+          <a href="/home">Home</a>
+          <a href="/learn-more">Features</a>
+          <a href="/blog">Blog</a>
+          <a href="/contact">Request Demo</a>
+        </div>
+        <div>
+          <strong>Company</strong>
+          <a href="/about">About Us</a>
+          <a href="/contact">Contact</a>
+        </div>
+        <div>
+          <strong>Support</strong>
+          <a href="mailto:hello@showwise.app">hello@showwise.app</a>
+          <a href="mailto:support@showwise.app">support@showwise.app</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 ShowWise. All rights reserved.</p></div>
+  </footer>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
