@@ -70,3 +70,11 @@ pip install -r requirements.txt
 ```
 python app.py
 ```
+
+
+# option 2 test via web
+- i gave hosted this on my server to one of my domains (sfx-crew.com)
+- if you want to have a look at it there it is acessable via https://digt1.sfx-crew.com/
+- the login for the blog is
+      - user : admin
+      - pass : digitask1
