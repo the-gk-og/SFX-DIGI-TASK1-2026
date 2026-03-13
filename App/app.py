@@ -53,6 +53,10 @@ def send_html_email(subject: str, recipient: str, html_body: str, text_body: str
 
 @app.route('/')
 def index():
+    return redirect('/home')
+
+@app.route('/home')
+def home():
     return render_template('index.html')
 
 @app.route('/contact')
