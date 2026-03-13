@@ -18,14 +18,40 @@ Small bussiness webpage:
     - has an on hover effect on table to make the page feel alive abn easyer to read and follow the info on the table
     - 
 - About
+    - timeline
+    - cards for team members
 
 - Contact
+    - in flask version working email notifcations on contact form
+    - form syntax handleing
+    - drop down FAQ
+
+
+# AI useage:
+1.  https://copilot.microsoft.com/shares/b3QxLzBTR9F6v6HzBP6P8 (basic FAQ togle) "Creating a Toggle FAQ with HTML and JavaScript" -> screen shots provided in /Other Assignment files/AI Useage SS/1
+
+2.  https://copilot.microsoft.com/shares/AaHmYxBoTWZwZ1aeAZdjf (Hover over effect) "CSS Hover Effects Guide" 
+/Other Assignment files/AI Useage SS/2
+
+
+3. https://copilot.microsoft.com/shares/3LGCjTXLL56htzsTfBeQm (animates for home page) "Website Opening Animation Ideas" /Other Assignment files/AI Useage SS/3
+
+
+4. https://copilot.microsoft.com/shares/SxncL4po1vGkxJm4ScdBR (ways to make a blog page) "Python Libraries for Flask Blog Development" Animation Ideas" /Other Assignment files/AI Useage SS/4
 
 
 
+Microsoft Copilot. (2024). *Creating a toggle FAQ with HTML and JavaScript*. 
+https://copilot.microsoft.com/shares/b3QxLzBTR9F6v6HzBP6P8
 
-AI useage:
-1.  https://copilot.microsoft.com/shares/b3QxLzBTR9F6v6HzBP6P8 (basic FAQ togle) "Creating a Toggle FAQ with HTML and JavaScript"
+Microsoft Copilot. (2024). *CSS hover effects guide*. 
+https://copilot.microsoft.com/shares/AaHmYxBoTWZwZ1aeAZdjf
+
+Microsoft Copilot. (2024). *Website opening animation ideas*. 
+https://copilot.microsoft.com/shares/3LGCjTXLL56htzsTfBeQm
+
+Microsoft Copilot. (2024). *Python libraries for Flask blog development*. 
+https://copilot.microsoft.com/shares/SxncL4po1vGkxJm4ScdBR
 
 
 
@@ -38,7 +64,19 @@ pip install -r requirements.txt
 ```
 2. copy or rename example.env to .env and fill in varibles with valid SMTP Login, (optional genarate a secarate key)
 
-3. run app.py
+3. Set blog password (optional, defult = user: admin password : admin)
+
+4. run app.py
 ```
 python app.py
 ```
+
+
+# option 2 test via web
+- i gave hosted this on my server to one of my domains (sfx-crew.com)
+- if you want to have a look at it there it is acessable via https://digt1.sfx-crew.com/
+- the login for the blog is
+      - user : admin
+      - pass : digitask1
+- to actcess the blog go to the /blog/admin page (intensionaly no button)
+- https://digt1.sfx-crew.com/blog/admin

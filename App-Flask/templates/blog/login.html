@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShowWise Blog - Admin Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/blog.css">
+</head>
+<body>
+  <div class="blog-login-wrap">
+    <div class="blog-login-card">
+      <a href="/home" class="logo">Show<span>Wise</span></a>
+      <h2>Blog Admin</h2>
+
+      {% if error %}
+        <div class="flash-error">{{ error }}</div>
+      {% endif %}
+
+      <form method="POST">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" autocomplete="username" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" autocomplete="current-password" required>
+        </div>
+        <button type="submit" class="btn-primary full-width" style="border:none; cursor:pointer; margin-top:8px;">Log In</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
