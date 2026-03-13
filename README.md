@@ -78,3 +78,5 @@ python app.py
 - the login for the blog is
       - user : admin
       - pass : digitask1
+- to actcess the blog go to the /blog/admin page (intensionaly no button)
+- https://digt1.sfx-crew.com/blog/admin/
