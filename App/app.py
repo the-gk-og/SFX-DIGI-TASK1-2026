@@ -1,7 +1,7 @@
 import os
 
 from flask import Flask, render_template, request, redirect, url_for, flash, jsonify, session
-from flask_mail import Mail
+from flask_mail import Mail, Message
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -17,8 +17,6 @@ app.config.update(
     MAIL_PASSWORD=os.getenv('MAIL_PASSWORD'),
     MAIL_DEFAULT_SENDER=os.getenv('MAIL_DEFAULT_SENDER')
 )
-
-mail = Mail(app)
 
 app.secret_key = os.getenv('SECRET_KEY')
 
@@ -65,23 +63,45 @@ def contact():
 
 @app.route('/contact/submit', methods=['POST'])
 def contact_submit():
-    name = request.form.get('name')
-    email = request.form.get('email')
-    message = request.form.get('message')
+    fname   = request.form.get('fname', '').strip()
+    lname   = request.form.get('lname', '').strip()
+    name    = f"{fname} {lname}".strip() or request.form.get('name', '').strip()
+    email   = request.form.get('email', '').strip()
+    org     = request.form.get('org', '').strip()
+    enquiry = request.form.get('enquiry', '').strip()
+    message = request.form.get('message', '').strip()
 
     if not name or not email or not message:
         flash('Please fill in all fields.', 'error')
         return redirect(url_for('contact'))
 
-    # Send email admin
-    subject = f'New Contact Form Submission from {name}'
-    recipient = os.getenv('MAIL_DEFAULT_SENDER')
-    html_body = load_email_template('contact_notification.html', {
-        'name': name,
-        'email': email,
+    # Send notification email to admin
+    admin_html = load_email_template('contact_notification.html', {
+        'name':    name,
+        'email':   email,
+        'org':     org,
+        'enquiry': enquiry,
         'message': message
     })
-    send_html_email(subject, recipient, html_body)
+    send_html_email(
+        subject   = f'New Contact Form Submission from {name}',
+        recipient = os.getenv('MAIL_DEFAULT_SENDER'),
+        html_body = admin_html,
+        text_body = f"Name: {name}\nEmail: {email}\nOrg: {org}\nEnquiry: {enquiry}\n\n{message}"
+    )
+
+    # Send confirmation email to the person who submitted
+    confirm_html = load_email_template('contact_confirmation.html', {
+        'name':    fname or name,
+        'enquiry': enquiry,
+        'message': message
+    })
+    send_html_email(
+        subject   = 'We got your message – ShowWise',
+        recipient = email,
+        html_body = confirm_html,
+        text_body = f"Hi {fname or name},\n\nThanks for reaching out! We'll be in touch within one business day.\n\nShowWise Team"
+    )
 
     flash('Your message has been sent successfully!', 'success')
     return redirect(url_for('contact'))
@@ -95,5 +115,5 @@ def learnmore():
     return render_template('learn-more.html')
 
 if __name__ == '__main__':
-    app.run(debug=True) 
-
+    app.run(debug=True)
+    
