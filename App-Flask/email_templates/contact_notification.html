@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Contact Form Submission</title>
+  <style>
+    body { margin: 0; padding: 0; background: #f3efe8; font-family: 'DM Sans', Arial, sans-serif; color: #0d0d12; }
+    .wrapper { max-width: 600px; margin: 40px auto; background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
+    .header { background: #0d0d12; padding: 32px 40px; text-align: center; }
+    .header .logo { font-size: 1.6rem; color: #ffffff; font-weight: 700; letter-spacing: -0.5px; }
+    .header .logo span { color: #3b82f6; }
+    .header p { color: rgba(255,255,255,0.6); font-size: 0.82rem; margin: 8px 0 0; text-transform: uppercase; letter-spacing: 0.08em; }
+    .body { padding: 40px; }
+    .body h2 { font-size: 1.3rem; margin: 0 0 24px; }
+    .field { margin-bottom: 20px; border: 1px solid #f3efe8; border-radius: 10px; overflow: hidden; }
+    .field-label { background: #f3efe8; padding: 8px 16px; font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #6b6b7e; }
+    .field-value { padding: 12px 16px; font-size: 0.92rem; color: #2a2a35; line-height: 1.6; word-break: break-word; }
+    .message-value { white-space: pre-wrap; }
+    .footer { background: #f3efe8; padding: 24px 40px; text-align: center; font-size: 0.78rem; color: #6b6b7e; }
+    .footer a { color: #3b82f6; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="header">
+      <div class="logo">Show<span>Wise</span></div>
+      <p>New Contact Form Submission</p>
+    </div>
+    <div class="body">
+      <h2>Someone filled out the contact form</h2>
+
+      <div class="field">
+        <div class="field-label">Name</div>
+        <div class="field-value">{{ name }}</div>
+      </div>
+
+      <div class="field">
+        <div class="field-label">Email</div>
+        <div class="field-value"><a href="mailto:{{ email }}" style="color:#3b82f6;">{{ email }}</a></div>
+      </div>
+
+      <div class="field">
+        <div class="field-label">Organisation</div>
+        <div class="field-value">{{ org }}</div>
+      </div>
+
+      <div class="field">
+        <div class="field-label">Type of Enquiry</div>
+        <div class="field-value">{{ enquiry }}</div>
+      </div>
+
+      <div class="field">
+        <div class="field-label">Message</div>
+        <div class="field-value message-value">{{ message }}</div>
+      </div>
+    </div>
+    <div class="footer">
+      <p>Reply directly to <a href="mailto:{{ email }}">{{ email }}</a> to respond.</p>
+      <p style="margin-top:8px;">© 2026 ShowWise · <a href="mailto:info@showwise.app">info@showwise.app</a></p>
+    </div>
+  </div>
+</body>
+</html>

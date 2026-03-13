@@ -26,3 +26,19 @@ Small bussiness webpage:
 
 AI useage:
 - https://copilot.microsoft.com/shares/b3QxLzBTR9F6v6HzBP6P8 (basic FAQ togle) "Creating a Toggle FAQ with HTML and JavaScript"
+
+
+
+
+# using flask app
+
+1. install requirements.txt 
+```
+pip install -r requirements.txt
+```
+2. copy or rename example.env to .env and fill in varibles with valid SMTP Login, (optional genarate a secarate key)
+
+3. run app.py
+```
+python app.py
+```

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>We got your message – ShowWise</title>
+  <style>
+    body { margin: 0; padding: 0; background: #f3efe8; font-family: 'DM Sans', Arial, sans-serif; color: #0d0d12; }
+    .wrapper { max-width: 600px; margin: 40px auto; background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
+    .header { background: #0d0d12; padding: 32px 40px; text-align: center; }
+    .header .logo { font-size: 1.6rem; color: #ffffff; font-weight: 700; letter-spacing: -0.5px; }
+    .header .logo span { color: #3b82f6; }
+    .body { padding: 40px; }
+    .body h2 { font-size: 1.4rem; margin: 0 0 16px; }
+    .body p { color: #6b6b7e; line-height: 1.7; margin: 0 0 16px; font-size: 0.95rem; }
+    .recap { background: #f3efe8; border-radius: 10px; padding: 20px 24px; margin: 28px 0; border: 1px solid #ede9e1; }
+    .recap-label { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #6b6b7e; margin-bottom: 8px; }
+    .recap-value { font-size: 0.9rem; color: #2a2a35; line-height: 1.6; white-space: pre-wrap; word-break: break-word; }
+    .response-times { margin: 24px 0; }
+    .response-times table { width: 100%; border-collapse: collapse; font-size: 0.85rem; border-radius: 10px; overflow: hidden; }
+    .response-times th { background: #0d0d12; color: white; padding: 10px 16px; text-align: left; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; }
+    .response-times td { padding: 10px 16px; border-bottom: 1px solid #f3efe8; color: #2a2a35; }
+    .response-times tr:last-child td { border-bottom: none; }
+    .btn { display: inline-block; background: #0d0d12; color: #ffffff; padding: 13px 28px; border-radius: 50px; font-weight: 600; font-size: 0.9rem; text-decoration: none; margin-top: 8px; }
+    .footer { background: #f3efe8; padding: 24px 40px; text-align: center; font-size: 0.78rem; color: #6b6b7e; border-top: 1px solid #ede9e1; }
+    .footer a { color: #3b82f6; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="header">
+      <div class="logo">Show<span>Wise</span></div>
+    </div>
+    <div class="body">
+      <h2>We got your message, {{ name }}!</h2>
+      <p>Thanks for reaching out. The ShowWise team will review your enquiry and get back to you as soon as possible.</p>
+
+      <div class="recap">
+        <div class="recap-label">Your enquiry type</div>
+        <div class="recap-value">{{ enquiry }}</div>
+      </div>
+
+      <div class="recap">
+        <div class="recap-label">Your message</div>
+        <div class="recap-value">{{ message }}</div>
+      </div>
+
+      <div class="response-times">
+        <table>
+          <thead>
+            <tr><th>Enquiry Type</th><th>Response Time</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Demo Request</td><td>Under 24 hours</td></tr>
+            <tr><td>Technical Support</td><td>Within 1 business day</td></tr>
+            <tr><td>General Enquiry</td><td>Within 2 business days</td></tr>
+            <tr><td>Bug Report</td><td>Within 24 hours</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>In the meantime, feel free to explore what ShowWise can do for your production team.</p>
+      <a href="https://showwise.app/learn-more" class="btn">Explore Features</a>
+    </div>
+    <div class="footer">
+      <p>Need urgent help? Email us at <a href="mailto:support@showwise.app">support@showwise.app</a></p>
+      <p style="margin-top:8px;">© 2026 ShowWise · All rights reserved</p>
+    </div>
+  </div>
+</body>
+</html>
