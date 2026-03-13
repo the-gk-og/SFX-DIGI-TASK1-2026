@@ -25,7 +25,7 @@ Small bussiness webpage:
 
 
 AI useage:
-- https://copilot.microsoft.com/shares/b3QxLzBTR9F6v6HzBP6P8 (basic FAQ togle) "Creating a Toggle FAQ with HTML and JavaScript"
+1.  https://copilot.microsoft.com/shares/b3QxLzBTR9F6v6HzBP6P8 (basic FAQ togle) "Creating a Toggle FAQ with HTML and JavaScript"
 
 
 
